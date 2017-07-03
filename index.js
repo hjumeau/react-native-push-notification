@@ -4,14 +4,14 @@
 
 'use strict';
 
-var RNNotificationsComponent = require( './component' );
+const RNNotificationsComponent = require( './component' );
 
-var AppState = RNNotificationsComponent.state;
-var RNNotifications = RNNotificationsComponent.component;
+const AppState = RNNotificationsComponent.state;
+const RNNotifications = RNNotificationsComponent.component;
 
-var Platform = require('react-native').Platform;
+const Platform = require('react-native').Platform;
 
-var Notifications = {
+const Notifications = {
 	handler: RNNotifications,
 	onRegister: false,
 	onError: false,
@@ -166,7 +166,8 @@ Notifications.localNotificationSchedule = function(details: Object) {
 			alertBody: details.message,
 			soundName: soundName,
 			userInfo: details.userInfo,
-			repeatInterval: details.repeatType
+			repeatInterval: details.repeatType,
+			category: details.category,
 		};
 
 		if(details.number) {
